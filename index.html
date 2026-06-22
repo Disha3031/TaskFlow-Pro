@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow Pro - Realtime Battle Quest</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Victory Popup Modal Screen Overlay -->
+    <div class="modal-overlay" id="victoryModal">
+        <div class="modal-card">
+            <div class="modal-banner">🎉 VICTORY! 🎉</div>
+            <h2 id="modalBossName">BOSS DEFEATED</h2>
+            <p class="modal-sub">You successfully broke down your goals and conquered the challenge!</p>
+
+            <div class="rewards-box">
+                <div class="reward-item">⭐ +100 XP</div>
+                <div class="reward-item">🪙 +50 GOLD</div>
+            </div>
+
+            <div class="next-boss-alert" id="modalNextBoss">
+                Next Level Boss Unlocked...
+            </div>
+
+            <button class="btn-claim" id="claimRewardsBtn">Claim Rewards & Continue</button>
+        </div>
+    </div>
+    <div class="app-container">
+        <!-- Header Area -->
+        <header class="header">
+            <div class="header-left">
+                <div class="logo-box">🧠</div>
+                <button class="theme-btn" id="themeToggle">🌙 Dark Mode</button>
+            </div>
+
+            <div class="brand">🚀 TaskFlow Pro</div>
+
+            <div class="currency-display">
+                <div class="stat-badge xp-badge">⭐ XP: <span id="xpCount">0</span></div>
+                <div class="stat-badge gold-badge">🪙 GOLD: <span id="goldCount">0</span></div>
+            </div>
+        </header>
+        <!-- Main Layout Grid -->
+        <div class="main-layout">
+            <!-- Sidebar Profile and Quest Progress -->
+            <aside class="sidebar">
+                <div class="profile-card">
+                    <h2 id="levelDisplay">Level 1</h2>
+                    <div class="stat-item">🔥 Streak: <span id="streakCount">0</span> Days</div>
+                    <div class="stat-item">🌱 Rank: <span id="rankDisplay">Beginner</span></div>
+                </div>
+                <div class="metrics-card">
+                    <h3>Quest Logs</h3>
+                    <div class="metric-row">Total: <span id="totalTasks">0</span></div>
+                    <div class="metric-row">Completed: <span id="completedTasks">0</span></div>
+                    <div class="overall-progress-container">
+                        <div class="overall-progress-bar" id="overallProgressBar"></div>
+                    </div>
+                </div>
+            </aside>
+            <!-- Main Workspace Area -->
+            <main class="workspace">
+                <!-- Boss Battle Arena Panel -->
+                <section class="boss-arena">
+                    <div class="boss-header">
+                        <span class="boss-title" id="bossMainTitle">PROJECT VORTEX (BOSS FIGHT)</span>
+                        <span class="boss-subtitle" id="bossLevelTier">BOSS BATTLE - TIER 1</span>
+                    </div>
+                    <div class="boss-body">
+                        <div class="boss-status">
+                            <div class="boss-hp-text">BOSS HEALTH: <span id="bossHpText">100</span> / <span id="bossMaxHpText">100</span> HP</div>
+                            <!-- Segmented HP bar wrapper -->
+                            <div class="hp-bar-container" id="hpBarContainer"></div>
+                        </div>
+                        <div class="boss-visual">
+                            <div class="fireball" id="fireballEffect">🔥</div>
+                            <div class="boss-avatar" id="bossEnemy">🐉</div>
+                        </div>
+                    </div>
+                    <div class="boss-footer">
+                        🛡️ Breaking down the boss... Complete sub-quests to defeat the monster! ⚔️
+                    </div>
+                </section>
+                <!-- Control Task Input Form Layout Bar -->
+                <section class="task-entry-panel">
+                    <div class="task-form">
+                        <input type="text" id="taskInput" class="form-control" placeholder="Add a sub-quest or main quest...">
+                        <select id="priorityInput" class="form-control">
+                        <option value="High">🔥 High Priority</option>
+                        <option value="Medium">⚡ Medium Priority</option>
+                        <option value="Low">🌱 Low Priority</option>
+                    </select>
+
+                        <input type="date" id="dateInput" class="form-control">
+
+                        <button class="btn-add" id="addTaskBtn">Add Task</button>
+                    </div>
+                </section>
+
+                <!-- Interactive Output List Container -->
+                <section class="quest-log-container">
+                    <ul class="task-list" id="taskList"></ul>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
